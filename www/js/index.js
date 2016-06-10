@@ -43,6 +43,40 @@
         // Wire up the UI Event Handler for the Add Item
         $('#add-item').submit(addItemHandler);
         $('#refresh').on('click', refreshDisplay);
+
+        // Added to register for push notifications.
+        registerForPushNotifications();
+    }
+
+    // Register for Push Notifications.
+    // Requires that phonegap-plugin-push be installed.
+    var pushRegistration = null;
+    function registerForPushNotifications() {
+        pushRegistration = PushNotification.init({
+            android: {
+                senderID: '63188379771'
+            },
+            ios: {
+                alert: 'true',
+                badge: 'true',
+                sound: 'true'
+            },
+            wns: {
+
+            }
+        });
+
+        pushRegistration.on('registration', function (data) {
+            client.push.register('gcm', data.registrationId);
+        });
+
+        pushRegistration.on('notification', function (data, d2) {
+
+
+            alert('Push Received: ' + data.message);
+        });
+
+        pushRegistration.on('error', handleError);
     }
 
     /**

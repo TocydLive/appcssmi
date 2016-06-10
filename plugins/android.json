@@ -1,0 +1,26 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.microsoft.azure.mobileapps.AppCSSMI"
+        },
+        "cordova-plugin-ms-azure-mobile-apps": {
+            "PACKAGE_NAME": "com.microsoft.azure.mobileapps.AppCSSMI"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "63188379771",
+            "PACKAGE_NAME": "com.microsoft.azure.mobileapps.AppCSSMI"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.microsoft.azure.mobileapps.AppCSSMI"
+        }
+    }
+}
